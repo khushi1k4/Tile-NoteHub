@@ -1,44 +1,77 @@
-import React from 'react';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import {  useSelector } from 'react-redux'; 
-import { addToPastes, updateToPastes } from '../redux/pasteSlice';
-import Pastes from './Pastes';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateToPastes } from '../redux/pasteSlice';
+import toast from 'react-hot-toast';
 
 const ViewPastes = () => {
-  const {id} = useParams();
-  const allPastes = useSelector(state => state.paste.pastes);
-  const paste = allPastes.filter(p => p.id == id)[0];
-  console.log("Final Paste: ", paste);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const allPastes = useSelector((state) => state.paste.pastes);
   
-  return (
-    <div>
-        <div>
-        <div className='flex flex-row- gap-7 place-content-between'>
-        <div>
-            <input 
-            type='text'
-            className='p-2 rounded-2xl mt-2 w-[315px]'
-            placeholder='Enter Title here'
-            value={paste.title}
-            disabled
-            onChange={e => setTitle(e.target.value)}
-            />
-        </div>
+  // Find the paste by ID
+  const paste = allPastes.find((p) => p.id === id);
 
-    </div>
-    <div>
-        <textarea 
-        className='rounded-2xl mt-4 min-w-[500px] p-4 text-white'
-        value={paste.content}
-        placeholder='Enter your content here'
-        onChange={e => setValue(e.target.value)}
-        rows={20}
+  // Local state for editing
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
+  // Set initial state when paste loads
+  useEffect(() => {
+    if (paste) {
+      setTitle(paste.title);
+      setContent(paste.content);
+    }
+  }, [paste]);
+
+  if (!paste) {
+    return <div className="text-white text-center mt-5">Paste not found</div>;
+  }
+
+  // Save changes to Redux
+  const handleSave = () => {
+    if (!title.trim() || !content.trim()) {
+      return toast.error('Title and Content cannot be empty');
+    }
+    dispatch(updateToPastes({ id: paste.id, title, content }));
+    toast.success('Paste updated successfully!');
+    navigate('/pastes'); // Redirect back to list after saving
+  };
+
+  return (
+    <div className="flex flex-col items-center mt-5">
+      <div className="flex flex-col gap-5 w-full max-w-3xl">
+        {/* Title Input */}
+        <input
+          type="text"
+          className="p-3 rounded-2xl w-full text-black font-bold text-lg"
+          placeholder="Enter title here"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
-    </div>
-    </div>
+
+        {/* Content Textarea */}
+        <textarea
+          className="p-4 rounded-2xl w-full min-h-[300px] text-black"
+          placeholder="Enter your content here"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          rows={15}
+        />
+
+        {/* Save Button */}
+        <div className="flex justify-end">
+          <button
+            onClick={handleSave}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded"
+          >
+            Save
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default ViewPastes;
