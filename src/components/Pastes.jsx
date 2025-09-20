@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFromPastes } from '../redux/pasteSlice';
 import toast from 'react-hot-toast';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const Pastes = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -86,24 +87,27 @@ const Pastes = () => {
                   >
                     Edit
                   </a>
-                  <a
-                    href={`/pastes/${paste?.id}`}
+                  
+                  <Link to={`/pastes/${paste?.id}`}
                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   >
                     View
-                  </a>
+                  </Link>
+
                   <button
                     onClick={() => handleDelete(paste?.id)}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Delete
                   </button>
+                  
                   <button
                     onClick={() => handleCopy(paste?.content)}
                     className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Copy
                   </button>
+                  
                   <button
                     onClick={() => handleNativeShare(paste)}
                     className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
