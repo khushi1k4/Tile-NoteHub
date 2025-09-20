@@ -130,3 +130,4 @@ const Pastes = () => {
 };
 
 export default Pastes;
+

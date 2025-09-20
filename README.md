@@ -13,7 +13,6 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-<!-- step 1: -->
 <!-- npm install -D tailwindcss@3.4.1
 >> npx tailwindcss init -p -->
 <!-- This is used to crate project framework with vite react and tailwind for project -->
@@ -35,7 +34,6 @@ If you are developing a production application, we recommend using TypeScript wi
 export const store = configureStore({
     reducer: {},
 }) -->
-<!-- This sample sinnipet code needed to add in store.js as we create it store.js as centeralisd store for redux took kit -->
 
 <!-- Next step: To wrap up by the Provider to the App component in main.jsx and import the store.js in main.jsx -->
 

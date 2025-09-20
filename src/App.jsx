@@ -40,7 +40,7 @@ const router = createBrowserRouter(
 
 function App() {
   
-  return (
+return (
     <div>
       <RouterProvider router={router}/>
     </div>
