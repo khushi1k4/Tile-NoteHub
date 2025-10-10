@@ -1,6 +1,68 @@
-Note Creating Application to create, edit with date of last used, view, copy, delete and share || Tech-Stack: React.js , Redux Tool Kit, JS, Tailwind and local Storage || Learning N Building Frontend
+# Note Making Website
+
+A Note Creating Application built to practice and understand core frontend concepts — including React.js, Redux Toolkit, Tailwind CSS, and Local Storage.
+This web app allows users to create, edit, view, copy, delete, and share notes, while also displaying the last used date for each note.
+
+⚙️ Designed for desktop use — non-responsive, purely for learning and practice purposes.
 
 https://github.com/user-attachments/assets/8506ac87-e047-49ae-a04f-e46275b84d42
+
+### 🧠 Tech Stack
+
+- React.js (Vite Setup) – for fast development and modular UI
+- Redux Toolkit – for global state management
+- JavaScript (ES6+) – for logic and interactivity
+- Tailwind CSS – for styling
+- Local Storage – for persisting notes
+
+### ✨ Features
+
+📝 Create new notes
+<br/>
+✏️ Edit existing notes
+<br/>
+📅 View date of last edit or use
+<br/>
+👀 View full note details
+<br/>
+📋 Copy note content
+<br/>
+🗑️ Delete notes
+<br/>
+🔗 Share notes easily
+
+
+## 🚀 Setup Instructions
+
+1. Clone the repository
+
+   - git clone https://github.com/yourusername/note-making-website.git
+   - cd note-making-website
+
+2. Install dependencies
+
+   - npm install
+
+3. Run the development server
+
+   - npm run dev
+
+4. Open your browser and navigate to the provided local URL.
+---
+
+### ⚡ Built With
+
+- React + Vite (using Fast Refresh)
+- Redux Toolkit for simplified state management
+- Tailwind CSS for utility-first responsive design
+- Local Storage for persistent data saving
+
+### 🖥️ Compatibility
+
+🧩 Designed for PC/Desktop only
+ <br/>
+🚫 Not optimized for mobile or tablet screens
+
 
 # React + Vite
 
