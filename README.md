@@ -31,24 +31,23 @@ https://github.com/user-attachments/assets/8506ac87-e047-49ae-a04f-e46275b84d42
 <br/>
 🔗 Share notes easily
 
-```bash
 ## 🚀 Setup Instructions
 
 1. Clone the repository
-
+```bash
    - git clone https://github.com/yourusername/note-making-website.git
    - cd note-making-website
-
-2. Install dependencies
-
-   - npm install
-
-3. Run the development server
-
-   - npm run dev
-
-4. Open your browser and navigate to the provided local URL.
 ```
+2. Install dependencies
+```bash
+   - npm install
+```
+3. Run the development server
+```bash
+   - npm run dev
+```
+4. Open your browser and navigate to the provided local URL.
+---
 
 ### ⚡ Built With
 
