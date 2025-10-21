@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/8506ac87-e047-49ae-a04f-e46275b84d42
 <br/>
 🔗 Share notes easily
 
-
+```bash
 ## 🚀 Setup Instructions
 
 1. Clone the repository
@@ -48,7 +48,7 @@ https://github.com/user-attachments/assets/8506ac87-e047-49ae-a04f-e46275b84d42
    - npm run dev
 
 4. Open your browser and navigate to the provided local URL.
----
+```
 
 ### ⚡ Built With
 
